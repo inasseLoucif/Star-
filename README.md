@@ -1,45 +1,161 @@
-# Exercice 1: Calcul des coûts d’une Infrastructure as a Service en fonction de différents Cloud Provider
+# Comparatif des coûts Cloud – Infrastructures 1, 2 et 3 (Prix en USD, HT, mensuel)
 
-## Cas N°1 (Start-up Eldo)
+Les coûts ci-dessous sont exprimés en dollars US (USD), hors taxes, selon une périodicité mensuelle.
+Aucune licence n’est incluse (Windows, SQL Server…), aucun plan d’économie (Saving Plans, Spot, Commitment) n’est appliqué.
+La région privilégiée est France (Paris) ou, à défaut, Europe.
 
-La solution la plus adaptée est un cloud public avec une plateforme PaaS.  
-Cela permet de scaler rapidement l’application si la start-up grandit, de payer uniquement à l’usage, et de ne pas gérer l’infrastructure technique.  
-Cette approche facilite le développement sans souci d’administration, offre un bon rapport qualité/prix et un déploiement rapide.  
-Le coût mensuel estimé pour une start-up de 60 employés est d’environ 1000 à 2000 euros/mois.
+Tous les calculs mensuels sont basés sur 720 heures/mois.
+Conversions EUR → USD réalisées au taux 1 EUR = 1,15 USD (ECB – 23/11/2025).
 
-## Cas N°2 (MySecureProtect)
+## Infrastructure n°1
+1 serveur : 16 Go RAM, 4 vCPU, 100 Go stockage
+### AWS
 
-Pour le cas N°2 (MySecureProtect), la meilleure solution est d’utiliser un cloud public avec Azure IoT Hub en mode PaaS. Cela permet de gérer facilement plus d’un million d’objets connectés avec une montée en charge aux heures de pointe (matin, soir) sans interruption.  
-Le coût mensuel peut varier entre 10 000 et 100 000 euros/mois selon le nombre de messages envoyés par les objets, le stockage des données, et les services liés comme les notifications. Cette solution assure la fiabilité, la sécurité et la rapidité nécessaires pour ce type de système.
+Instance t3.xlarge : 0,1664 USD/h → 119,81 USD/mois
 
-## Cas N°3 (Paul, particulier)
+Stockage gp3 : 0,08 USD/Go → 8 USD
 
-Pour le cas 3, la meilleure solution est un service de stockage cloud grand public en mode SaaS, comme Google Drive, OneDrive ou pCloud.  
-Cela permet à Paul de centraliser ses photos dans un espace sécurisé, d’y accéder facilement depuis tous ses appareils sans compétence technique, et de bénéficier de sauvegardes et synchronisations automatiques.  
-Le coût est raisonnable et stable, autour de 60 à 120 euros par an pour environ 1 To de stockage, ce qui correspond bien à ses besoins et budget.
+Total : 127,81 USD/mois
 
-## Cas N°4
+### GCP
 
-Cette grande entreprise de défense a des besoins très élevés en sécurité et en contrôle des données sensibles, avec une forte exigence de conformité. Elle doit aussi pouvoir faire évoluer rapidement ses infrastructures en fonction des missions et du volume de traitements.  
-Pour répondre à cela, on choisit un cloud hybride avec un cloud privé sécurisé pour stocker les données critiques, associé à du IaaS qui permet de gérer directement les serveurs, le stockage et les réseaux.  
-Le coût mensuel d’une telle architecture est élevé, généralement plusieurs millions d’euros (entre 10 et 100 millions/mois), en raison des exigences de sécurité, de la taille importante des infrastructures, et des ressources humaines nécessaires à la gestion.  
-Cette solution est donc adaptée aux contraintes strictes et à l’évolution rapide requises dans le secteur de la défense.
+VM e2-standard-4 : 0,134 USD/h → 96,48 USD/mois
 
-## Cas N°5
+Stockage persistant : 0,10 USD/Go → 10 USD
 
-Pour le cas 5, TheFoodStore est une petite entreprise qui souhaite rapidement lancer un site e-commerce. Le plus simple et rapide est d’utiliser une solution SaaS comme Shopify, WiziShop ou Wix.  
-Ces plateformes offrent un hébergement, la gestion du site, les moyens de paiement, et le support technique, sans avoir à gérer l’infrastructure. Elles permettent aussi de démarrer rapidement et de se concentrer sur le développement commercial.  
-Le coût mensuel est très accessible, entre 10 et 100 euros/mois selon les options choisies, ce qui convient parfaitement à une petite entreprise souhaitant tester son activité sans gros investissement initial.
+Total : 106,48 USD/mois
 
-## Cas N°6
+### Azure
 
-Pour le cas 6, DeliverEats, la meilleure solution est un cloud public avec du IaaS.  
-Cette plateforme doit gérer plusieurs applications et un grand nombre d’utilisateurs avec des pics de trafic importants. Le cloud public apporte la scalabilité et la flexibilité nécessaires, tandis que le IaaS permet un contrôle précis des serveurs et des ressources réseau pour ajuster l’infrastructure selon les besoins spécifiques.  
-Le coût mensuel est généralement compris entre 1000 et 5000 euros/mois, en fonction du trafic et des ressources consommées.
+VM D4s_v4 : 0,192 USD/h → 138,24 USD/mois
 
-## Cas N°7
+Stockage SSD : 0,08 USD/Go → 8 USD
 
-Pour le cas 7, l’entreprise Onenveutpa, qui compte un grand nombre de télévendeurs travaillant partout dans le monde, le choix le plus adapté est une solution SaaS hébergée sur un cloud public.  
-Le SaaS facilite l’accès aux données clients et la gestion commerciale depuis n’importe quel lieu, sans que les télévendeurs aient besoin d’installer ou maintenir des logiciels localement. Le cloud public offre la scalabilité nécessaire pour accueillir un grand nombre d’utilisateurs simultanés tout en garantissant une haute disponibilité et une bonne performance.  
-Le coût mensuel dépend du nombre d’utilisateurs et des fonctionnalités, avec une fourchette moyenne d’environ 20 à 50 euros par utilisateur. Pour des centaines ou milliers de télévendeurs, cela peut représenter un budget allant de plusieurs dizaines de milliers à plus de 100 000 euros par mois, incluant stockage, sécurité et support.  
-Cette solution assure ainsi une gestion efficace, sécurisée et évolutive des informations clients pour une équipe commerciale mondiale.
+Total : 146,24 USD/mois
+
+### Scaleway
+
+VM PRO2-XS : 0,11 €/h → ≈ 91,08 USD/mois
+
+Stockage bloc : 0,11 €/Go → ≈ 12,65 USD
+
+Total : ~103,7 USD/mois
+
+### OVH
+
+Coût approximatif équivalent AWS/GCP : 110–130 USD/mois
+
+Total estimé : ~120 USD/mois
+
+### Comparaison
+
+Scaleway (~104 USD) — le moins cher
+
+GCP (~106 USD)
+
+OVH (~120 USD)
+
+AWS (~128 USD)
+
+Azure (~146 USD) — le plus cher
+
+## Infrastructure n°2
+6 serveurs : 6 Go RAM, 3 vCPU, 20 Go stockage
+3 serveurs arrêtés 8h/jour (–33%)
+### AWS
+
+VM t3.medium : 0,0416 USD/h → 29,95 USD/mois
+
+6 VMs : 179,7 USD/mois
+
+Stockage 120 Go : 0,08 USD/Go → 9,6 USD
+
+Économie arrêt partiel (3 VMs, –33 %) : ≈ –30 USD
+
+Total ajusté : ~159,3 USD/mois
+
+### GCP
+
+Estimation : 160–170 USD/mois
+
+### Azure
+
+Estimation : ≈ 165 USD/mois
+
+### Scaleway
+
+VM DEV1-S : 0,04 €/h → ~33 USD/mois/VM
+
+6 VMs : ~198 USD
+
+Stockage : ~15 USD
+
+Ajustement arrêt partiel : –33 % sur 3 VMs
+
+Total ajusté : ≈ 180 USD/mois
+
+### OVH
+
+Estimation : 160–170 USD/mois
+
+### Comparaison
+
+L’écart entre fournisseurs se resserre :
+
+AWS, GCP, Azure, OVH : ~160–170 USD
+
+Scaleway : ~180 USD (moins avantageux sur de multiples petits serveurs)
+
+## Infrastructure n°3
+3 serveurs (4 Go RAM, 2 vCPU, 50 Go stockage)
++ 1 load balancer (5 Mb/s)
++ 1 base de données managée (8 Go RAM, 2 vCPU, 10 Go stockage)
+### AWS
+
+VM t3.small : 29,95 USD/mois → 89,85 USD (3 VMs)
+
+Stockage 150 Go : 0,08 USD/Go → 12 USD
+
+Load Balancer ALB : ~18 USD/mois
+
+Base managée RDS : ~60 USD/mois
+
+Total AWS : ~180 USD/mois
+
+### GCP
+
+Estimation services équivalents : 180–190 USD/mois
+
+### Azure
+
+Estimation similaire : 180–190 USD/mois
+
+### Scaleway
+
+VM DEV1-M : 0,07 €/h → ~57 USD/mois
+
+3 VMs → ~171 USD
+
+Stockage + LB + DB managée : ~150 USD
+
+Total Scaleway : ~325 USD/mois
+
+### OVH
+
+Estimation équivalente AWS/GCP/Azure : 180–190 USD/mois
+
+### Comparaison
+
+AWS / GCP / Azure / OVH : ≈ 180–190 USD/mois
+
+Scaleway : ~325 USD → clairement plus cher lorsqu’on ajoute des services managés
+
+## Conclusion générale
+
+Scaleway est le moins cher sur les machines simples, mais devient cher dès qu’on ajoute des services managés (DB, Load Balancer…).
+
+AWS, GCP, Azure et OVH sont globalement alignés pour les infrastructures complètes, autour de 180–190 USD/mois.
+
+Azure est souvent le plus cher pour les VMs seules.
+
+GCP offre souvent le meilleur rapport coût/performance sur les petites configurations.
